@@ -1,0 +1,18 @@
+language = "C"
+style = "both"
+include_guard = "BP_H"
+no_includes = true                          # cbindgen includes some header files by default we don't use
+sys_includes = ["stdint.h", "sys/socket.h"]
+
+[export]
+include = ["BpScheme", "SbpAddrIpn", "SbpAddr", "SockaddrBp"]
+
+[export.rename]
+"BpScheme" = "bp_scheme_t"
+"SbpAddrIpn" = "sbp_ipn_t"
+"SbpAddrDtn" = "sbp_dtn_t"
+"SbpAddr" = "sbp_addr_t"
+"SockaddrBp" = "sockaddr_bp"
+
+[enum]
+rename_variants = "QualifiedScreamingSnakeCase"
